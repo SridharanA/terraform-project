@@ -80,4 +80,6 @@ resource "aws_s3_bucket_website_configuration" "webhosting" {
   error_document {
     key = "error.html"
   }
+
+  depends_on = [ aws_s3_bucket_acl.public_read_acl ]
 }
